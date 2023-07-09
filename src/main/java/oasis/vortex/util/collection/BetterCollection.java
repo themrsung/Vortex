@@ -22,7 +22,7 @@ public interface BetterCollection<E> extends Collection<E> {
     BetterCollection<E> filter(@Nonnull Predicate<E> filter);
 
     /**
-     * Gets a filtered subcollection of this list by class.
+     * Gets a filtered subcollection of this collection by class.
      *
      * @param type Class to get
      * @param <F>  Type of class to get
