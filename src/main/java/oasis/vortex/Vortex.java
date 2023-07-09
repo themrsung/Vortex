@@ -22,6 +22,7 @@ public final class Vortex {
 
     /**
      * Gets the running state of Vortex.
+     *
      * @return {@link State}
      */
     @Nonnull
@@ -31,6 +32,7 @@ public final class Vortex {
 
     /**
      * Gets the tick task of Vortex.
+     *
      * @return {@link TickTask}
      */
     @Nonnull
@@ -40,6 +42,7 @@ public final class Vortex {
 
     /**
      * Gets the event task of Vortex.
+     *
      * @return {@link EventTask}
      */
     @Nonnull
@@ -53,6 +56,7 @@ public final class Vortex {
 
     /**
      * Called on startup.
+     *
      * @param args Arguments
      */
     public static void main(String[] args) {

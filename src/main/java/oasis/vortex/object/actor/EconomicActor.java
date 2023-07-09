@@ -11,6 +11,7 @@ import javax.annotation.Nonnull;
 public interface EconomicActor extends Actor {
     /**
      * Gets the asset portfolio of this actor.
+     *
      * @return {@link Portfolio}
      */
     @Nonnull

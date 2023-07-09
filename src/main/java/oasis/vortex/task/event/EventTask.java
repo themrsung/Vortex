@@ -20,6 +20,7 @@ public final class EventTask implements Task {
 
     /**
      * Adds an event to the queue.
+     *
      * @param event Event to add
      */
     public void callEvent(@Nonnull Event event) {
@@ -32,6 +33,7 @@ public final class EventTask implements Task {
 
     /**
      * Registers a listener.
+     *
      * @param listener Listener to register
      */
     public void registerListener(@Nonnull Listener<?> listener) {
@@ -40,6 +42,7 @@ public final class EventTask implements Task {
 
     /**
      * Registers multiple listeners.
+     *
      * @param listeners List of listeners
      */
     public void registerListeners(@Nonnull BetterList<Listener<?>> listeners) {
@@ -48,6 +51,7 @@ public final class EventTask implements Task {
 
     /**
      * Unregisters a listener.
+     *
      * @param listener Listener to unregister
      */
     public void unregisterListener(@Nonnull Listener<?> listener) {
@@ -56,6 +60,7 @@ public final class EventTask implements Task {
 
     /**
      * Unregisters multiple listeners.
+     *
      * @param listeners List of listeners
      */
     public void unregisterListeners(@Nonnull BetterList<Listener<?>> listeners) {

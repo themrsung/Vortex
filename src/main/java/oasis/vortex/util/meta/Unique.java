@@ -10,6 +10,7 @@ import java.util.UUID;
 public interface Unique {
     /**
      * Gets the unique identifier of this instance.
+     *
      * @return Unique ID
      */
     @Nonnull

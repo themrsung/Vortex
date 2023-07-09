@@ -11,12 +11,14 @@ import javax.annotation.Nonnull;
 public interface Listener<E extends Event> {
     /**
      * Called when the event occurs.
+     *
      * @param event Event that occurred
      */
     void handle(@Nonnull E event);
 
     /**
      * Gets the class of event this listener subscribes to.
+     *
      * @return Class of event
      */
     @Nonnull

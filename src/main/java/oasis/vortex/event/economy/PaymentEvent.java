@@ -12,13 +12,14 @@ import javax.annotation.Nullable;
 /**
  * <h2>PaymentEvent</h2>
  * <p>
- *     A payment event denotes the one-way flow of an {@link AssetStack}
- *     from one {@link EconomicActor} to another.
+ * A payment event denotes the one-way flow of an {@link AssetStack}
+ * from one {@link EconomicActor} to another.
  * </p>
  */
 public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
     /**
      * Gets a new builder instance.
+     *
      * @return Builder instance
      */
     public static Builder builder() {
@@ -27,6 +28,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
     /**
      * Gets the sender of this payment.
+     *
      * @return {@link EconomicActor}
      */
     @Nonnull
@@ -36,6 +38,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
     /**
      * Gets the portfolio of the sender.
+     *
      * @return Sender's {@link Portfolio}
      */
     @Nonnull
@@ -45,6 +48,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
     /**
      * Gets the recipient of this payment.
+     *
      * @return {@link EconomicActor}
      */
     @Nonnull
@@ -54,6 +58,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
     /**
      * Gets the portfolio of the recipient.
+     *
      * @return Recipient's {@link Portfolio}
      */
     @Nonnull
@@ -63,6 +68,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
     /**
      * Gets the payment to send.
+     *
      * @return {@link AssetStack}
      */
     @Nonnull
@@ -129,6 +135,7 @@ public class PaymentEvent extends PreemptiveEvent.AbstractPreemptiveEvent {
 
         /**
          * Finalizes building and returns a {@link PaymentEvent} instance.
+         *
          * @return {@link PaymentEvent}
          * @throws IllegalArgumentException When at least one of the required fields is null
          */
