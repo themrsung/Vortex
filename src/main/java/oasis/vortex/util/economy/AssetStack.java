@@ -9,7 +9,8 @@ import javax.annotation.Nonnull;
 public final class AssetStack {
     /**
      * Creates a new asset stack.
-     * @param asset Asset to store in this stack
+     *
+     * @param asset    Asset to store in this stack
      * @param quantity Quantity of asset
      */
     public AssetStack(@Nonnull Asset asset, double quantity) {
@@ -18,7 +19,19 @@ public final class AssetStack {
     }
 
     /**
+     * Performs a shallow copy.
+     * Since assets are immutable, this is practically a deep copy.
+     *
+     * @param other Asset stack to copy
+     */
+    public AssetStack(@Nonnull AssetStack other) {
+        this.asset = other.asset;
+        this.quantity = other.quantity;
+    }
+
+    /**
      * Gets the asset stored in this stack.
+     *
      * @return {@link Asset}
      */
     @Nonnull
@@ -28,6 +41,7 @@ public final class AssetStack {
 
     /**
      * Gets the amount of assets stored in this stack.
+     *
      * @return Quantity
      */
     public double getQuantity() {
@@ -36,6 +50,7 @@ public final class AssetStack {
 
     /**
      * Sets the quantity of assets stored in this stack.
+     *
      * @param quantity Quantity
      */
     public void setQuantity(double quantity) {
@@ -44,6 +59,7 @@ public final class AssetStack {
 
     /**
      * Adds delta to this stack.
+     *
      * @param delta Delta
      */
     public void addQuantity(double delta) {
@@ -52,6 +68,7 @@ public final class AssetStack {
 
     /**
      * Subtracts delta from this stack.
+     *
      * @param delta Delta
      */
     public void subtractQuantity(double delta) {
@@ -60,6 +77,7 @@ public final class AssetStack {
 
     /**
      * Multiplies this stack by given modifier.
+     *
      * @param modifier Modifier
      */
     public void multiplyQuantity(double modifier) {
@@ -68,11 +86,22 @@ public final class AssetStack {
 
     /**
      * Divides this stack by given denominator.
+     *
      * @param denominator Denominator
      * @throws ArithmeticException When denominator is zero
      */
     public void divideQuantity(double denominator) throws ArithmeticException {
         this.quantity /= denominator;
+    }
+
+    /**
+     * Whether this asset stack is equal to another.
+     *
+     * @param other Stack to compare to
+     * @return {@code true} If the asset being held is equals and the quantity is same
+     */
+    public boolean equals(@Nonnull AssetStack other) {
+        return asset.equals(other.asset) && quantity == other.quantity;
     }
 
     @Nonnull

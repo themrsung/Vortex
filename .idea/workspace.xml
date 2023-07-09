@@ -4,26 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/PermissiveEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/PreemptiveEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/BetterCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/list/BetterArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/list/BetterList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/set/BetterHashSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/set/BetterSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="Saving progress">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/Scheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/VortexState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/TickTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/Tickable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/location/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/location/Vector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/time/Duration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -42,6 +39,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-20.0.1/lib/src.zip!/java.base/java/util/stream/Stream.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="2SK5Raz5T8Q94RKrPVm2XcCmAnY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -75,11 +75,20 @@
       <option name="project" value="LOCAL" />
       <updated>1688883006470</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Saving progress">
+      <option name="closed" value="true" />
+      <created>1688888007321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688888007321</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Saving progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving progress" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package oasis.vortex.world;
 
-import oasis.vortex.object.actor.Actor;
+import oasis.vortex.object.Object;
+import oasis.vortex.task.tick.Tickable;
 import oasis.vortex.util.collection.set.BetterSet;
 
 import javax.annotation.Nonnull;
@@ -12,23 +13,26 @@ import javax.annotation.Nonnull;
  * There can be multiple worlds in one game state.
  * </p>
  */
-public interface World {
+public interface World extends Tickable {
     /**
-     * Gets a set of actors in this world.
-     * @return {@link BetterSet}
+     * Gets a set of objects in this world.
+     *
+     * @return {@link BetterSet} of objects
      */
     @Nonnull
-    BetterSet<Actor> getActors();
+    BetterSet<Object> getObjects();
 
     /**
-     * Adds an actor to this world.
-     * @param actor Actor to add
+     * Adds an object to this world.
+     *
+     * @param actor Object to add
      */
-    void addActor(@Nonnull Actor actor);
+    void addObject(@Nonnull Object actor);
 
     /**
-     * Removes an actor from this world.
-     * @param actor Actor to remove
+     * Removes an object from this world.
+     *
+     * @param actor Object to remove
      */
-    void removeActor(@Nonnull Actor actor);
+    void removeObject(@Nonnull Object actor);
 }

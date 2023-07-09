@@ -1,5 +1,8 @@
 package oasis.vortex.task;
 
+import javax.annotation.Nonnull;
+import java.time.Duration;
+
 /**
  * <h2>Task</h2>
  * <p>
@@ -8,5 +11,10 @@ package oasis.vortex.task;
  * </p>
  */
 public interface Task {
-
+    /**
+     * Executes this task.
+     *
+     * @param delta Delta between ths last call and now.
+     */
+    void execute(@Nonnull Duration delta);
 }

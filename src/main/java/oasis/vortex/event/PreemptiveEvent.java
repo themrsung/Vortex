@@ -5,10 +5,11 @@ import javax.annotation.Nullable;
 /**
  * <h2>PreemptiveEvent</h2>
  * <p>
- *     A preemptive event is cancellable, and can be put anywhere in an event chain.
- *     Preemptive events can either succeed or fail.
- *     The successive events will only be called upon succession of this event.
+ * A preemptive event is cancellable, and can be put anywhere in an event chain.
+ * Preemptive events can either succeed or fail.
+ * The successive events will only be called upon succession of this event.
  * </p>
+ *
  * @see Event
  */
 public interface PreemptiveEvent extends Event {
