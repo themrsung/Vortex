@@ -46,7 +46,7 @@ public interface State extends Tickable {
     //
 
     /**
-     * Gets a combined list of objects from all worlds.
+     * Gets a superset of objects from all worlds.
      *
      * @return Set of {@link Object}s.
      */
