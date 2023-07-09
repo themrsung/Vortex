@@ -31,6 +31,7 @@ public record Vector(
 
     /**
      * Gets a new empty builder instance.
+     *
      * @return Builder
      */
     public static Builder builder() {
@@ -39,6 +40,7 @@ public record Vector(
 
     /**
      * Gets the velocity of this vector.
+     *
      * @return Velocity
      */
     @Nonnegative
@@ -180,6 +182,7 @@ public record Vector(
             this.y = 0;
             this.z = 0;
         }
+
         private Builder(@Nonnull Vector vector) {
             this.x = vector.x;
             this.y = vector.y;

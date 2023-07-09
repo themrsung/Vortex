@@ -8,7 +8,7 @@ import javax.annotation.Nonnull;
  * <p>Represents the mass of an object.</p>
  *
  * @param value Value of mass
- * @param unit Unit of mass
+ * @param unit  Unit of mass
  */
 public record Mass(
         @Nonnegative double value,
@@ -16,6 +16,7 @@ public record Mass(
 ) {
     /**
      * Gets the value of this mass denoted in grams.
+     *
      * @return Grams
      */
     @Nonnegative
@@ -25,6 +26,7 @@ public record Mass(
 
     /**
      * Gets the value of this mass denoted in kilograms.
+     *
      * @return Kilograms
      */
     @Nonnegative
@@ -34,6 +36,7 @@ public record Mass(
 
     /**
      * Gets the value of this mass denoted in tons.
+     *
      * @return Tons
      */
     @Nonnegative
@@ -45,7 +48,7 @@ public record Mass(
      * Adds delta to this mass.
      *
      * @param delta Delta to add
-     * @param unit Unit of delta to add
+     * @param unit  Unit of delta to add
      * @return Resulting mass
      * @throws IllegalArgumentException When the resulting mass has a negative value
      */
@@ -58,7 +61,7 @@ public record Mass(
      * Changes the value of this mass.
      *
      * @param value New value
-     * @param unit New unit
+     * @param unit  New unit
      * @return Resulting mass
      */
     @Nonnull
@@ -102,7 +105,7 @@ public record Mass(
          * Converts given value's unit to this unit.
          *
          * @param sourceValue Source value
-         * @param sourceUnit Unit to convert from
+         * @param sourceUnit  Unit to convert from
          * @return Converted value
          */
         public double convert(@Nonnegative double sourceValue, @Nonnull Unit sourceUnit) {
@@ -136,10 +139,12 @@ public record Mass(
             this.value = 0;
             this.unit = null;
         }
+
         private Builder(@Nonnull Mass mass) {
             this.value = mass.value;
             this.unit = mass.unit;
         }
+
         @Nonnegative
         private double value;
         @Nonnull

@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
  * their getters are designed to convert them to within the acceptable range.
  * </p>
  * <p>
- *     <b>Every coordinate is denoted in meters.</b>
+ * <b>Every coordinate is denoted in meters.</b>
  * </p>
  *
  * @param world World this location is in
@@ -143,6 +143,7 @@ public record Location(
 
     /**
      * Changes the X coordinate of this location.
+     *
      * @param x X coordinate
      * @return Resulting location
      */
@@ -153,6 +154,7 @@ public record Location(
 
     /**
      * Changes the Y coordinate of this location.
+     *
      * @param y Y coordinate
      * @return Resulting location
      */
@@ -163,6 +165,7 @@ public record Location(
 
     /**
      * Changes the Z coordinate of this location.
+     *
      * @param z Z coordinate
      * @return Resulting location
      */
@@ -173,6 +176,7 @@ public record Location(
 
     /**
      * Changes the yaw of this location.
+     *
      * @param yaw Yaw
      * @return Resulting location
      */
@@ -183,6 +187,7 @@ public record Location(
 
     /**
      * Changes the pitch of this location.
+     *
      * @param pitch pitch
      * @return Resulting location
      */

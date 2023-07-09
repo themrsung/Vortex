@@ -6,11 +6,12 @@ import javax.annotation.Nonnull;
 /**
  * <h2>Volume</h2>
  * <p>
- *     Represents the volume of an object.
+ * Represents the volume of an object.
  * </p>
  * <p>
- *     All parameters are in meters.
+ * All parameters are in meters.
  * </p>
+ *
  * @param x
  * @param y
  * @param z
@@ -26,6 +27,7 @@ public record Volume(
 
     /**
      * Gets the volume in cubic meters.
+     *
      * @return Volume
      */
     @Nonnegative
@@ -35,6 +37,7 @@ public record Volume(
 
     /**
      * Gets the cross-section of X and Y.
+     *
      * @return XY cross-section
      */
     @Nonnegative
@@ -44,6 +47,7 @@ public record Volume(
 
     /**
      * Gets the cross-section of X and Z.
+     *
      * @return XZ cross-section
      */
     @Nonnegative
@@ -53,6 +57,7 @@ public record Volume(
 
     /**
      * Gets the cross-section of Y and Z.
+     *
      * @return YZ cross-section
      */
     @Nonnegative
@@ -95,6 +100,7 @@ public record Volume(
 
     /**
      * Converts this volume to builder for modification.
+     *
      * @return Builder
      */
     @Nonnull
@@ -112,6 +118,7 @@ public record Volume(
             this.y = 0;
             this.z = 0;
         }
+
         private Builder(@Nonnull Volume volume) {
             this.x = volume.x;
             this.y = volume.y;

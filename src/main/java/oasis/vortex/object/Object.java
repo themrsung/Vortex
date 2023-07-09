@@ -8,7 +8,6 @@ import oasis.vortex.util.physics.Vector;
 import oasis.vortex.util.physics.Volume;
 import oasis.vortex.world.World;
 
-import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 /**
@@ -49,6 +48,7 @@ public interface Object extends Unique, Tickable {
 
     /**
      * Gets the volume of this object.
+     *
      * @return {@link Volume}
      */
     @Nonnull
@@ -92,6 +92,7 @@ public interface Object extends Unique, Tickable {
 
     /**
      * Sets the volume of this object.
+     *
      * @param volume Volume
      */
     void setVolume(@Nonnull Volume volume);
@@ -105,6 +106,7 @@ public interface Object extends Unique, Tickable {
 
     /**
      * Sets the drag coefficient of this object.
+     *
      * @param coefficient Drag coefficient
      */
     void setDragCoefficient(double coefficient);
