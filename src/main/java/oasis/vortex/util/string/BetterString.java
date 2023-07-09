@@ -94,6 +94,33 @@ public interface BetterString {
     @Nonnull
     Format getFormat();
 
+    /**
+     * Changes the raw string contained in this {@link BetterString}.
+     *
+     * @param rawString Raw string to set to
+     * @return Resulting string
+     */
+    @Nonnull
+    BetterString setRawString(@Nonnull String rawString);
+
+    /**
+     * Changes the color of this string.
+     *
+     * @param color Color
+     * @return Resulting string
+     */
+    @Nonnull
+    BetterString setColor(@Nullable Color color);
+
+    /**
+     * Changes the format of this string.
+     *
+     * @param format Format
+     * @return Resulting string
+     */
+    @Nonnull
+    BetterString setFormat(@Nonnull Format format);
+
     enum Format {
         NORMAL,
         BOLD,

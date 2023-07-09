@@ -102,6 +102,24 @@ public class Text implements BetterString {
         return format;
     }
 
+    @Nonnull
+    @Override
+    public Text setRawString(@Nonnull String rawString) {
+        return toBuilder().setContent(rawString).build();
+    }
+
+    @Nonnull
+    @Override
+    public BetterString setColor(@Nullable Color color) {
+        return toBuilder().color(color).build();
+    }
+
+    @Nonnull
+    @Override
+    public BetterString setFormat(@Nonnull Format format) {
+        return toBuilder().format(format).build();
+    }
+
     //
     // Builder
     //
@@ -147,7 +165,7 @@ public class Text implements BetterString {
         }
 
         @Nonnull
-        public Builder color(@Nonnull Color color) {
+        public Builder color(@Nullable Color color) {
             this.color = color;
             return this;
         }
