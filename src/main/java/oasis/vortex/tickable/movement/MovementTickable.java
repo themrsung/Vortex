@@ -15,10 +15,9 @@ public final class MovementTickable implements Tickable {
     public void tick(@Nonnull Duration delta) {
         Vortex.getState().getWorlds().forEach(w -> {
             w.getObjects().forEach(o -> {
-                o.setLocation(o.getLocation().plusVector(o.getVector()));
+                o.setLocation(o.getLocation().plusVector(o.getVector().modifyAll(1.0 / 1000 * delta.getMillis())));
 
-                System.out.println("Tick took " + delta.getMillis() + "ms to execute.");
-                System.out.println("Current Y of object is: " + o.getLocation().y());
+                System.out.println("Object's location: " + o.getLocation().x() + ", " + o.getLocation().y() + ", " + o.getLocation().z());
             });
         });
     }

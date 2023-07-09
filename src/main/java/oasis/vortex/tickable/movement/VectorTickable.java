@@ -13,8 +13,23 @@ public final class VectorTickable implements Tickable {
             w.getObjects().forEach(o -> {
                 if (o.obeysPhysics()) {
                     // Handle gravity
-                    final double gravity = ((double) 1 / (1000 - delta.getMillis())) * Math.sqrt(w.getGravity());
-                    o.setVector(o.getVector().plusY(-gravity));
+                    final double accelerationFromGravity = w.getGravity() / 1000 * delta.getMillis();
+                    o.setVector(o.getVector().plusY(-accelerationFromGravity));
+
+                    // Terminal velocity
+                    final double crossSection = o.getVolume().getCrossSectionXZ();
+                    final double fluidDensity = 1.204;
+                    final double gravity = w.getGravity();
+
+                    final double terminalVelocity = Math.sqrt(
+                            (2 * o.getMass().valueKilograms() * gravity) /
+                                    (fluidDensity * crossSection * o.getDragCoefficient())
+                    );
+
+                    if (o.getVector().getVelocity() > terminalVelocity) {
+                        double modifier = terminalVelocity / o.getVector().getVelocity();
+                        o.setVector(o.getVector().modifyAll(modifier));
+                    }
                 }
             });
         });

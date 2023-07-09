@@ -1,4 +1,4 @@
-package oasis.vortex.util.movement;
+package oasis.vortex.util.physics;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;

@@ -2,11 +2,13 @@ package oasis.vortex.object;
 
 import oasis.vortex.tickable.Tickable;
 import oasis.vortex.util.meta.Unique;
-import oasis.vortex.util.movement.Location;
-import oasis.vortex.util.movement.Mass;
-import oasis.vortex.util.movement.Vector;
+import oasis.vortex.util.physics.Location;
+import oasis.vortex.util.physics.Mass;
+import oasis.vortex.util.physics.Vector;
+import oasis.vortex.util.physics.Volume;
 import oasis.vortex.world.World;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 /**
@@ -18,7 +20,7 @@ import javax.annotation.Nonnull;
  */
 public interface Object extends Unique, Tickable {
     //
-    // Movement
+    // Physics
     //
 
     /**
@@ -38,12 +40,27 @@ public interface Object extends Unique, Tickable {
     Vector getVector();
 
     /**
+     * Gets the velocity scalar of this object.
+     *
+     * @return Velocity
+     */
+    @Nonnegative
+    double getVelocity();
+
+    /**
      * Gets the mass of this object.
      *
      * @return {@link Mass}
      */
     @Nonnull
     Mass getMass();
+
+    /**
+     * Gets the volume of this object.
+     * @return {@link Volume}
+     */
+    @Nonnull
+    Volume getVolume();
 
     /**
      * Whether this object is subject to gravity and air resistance.
@@ -80,5 +97,24 @@ public interface Object extends Unique, Tickable {
      * @param mass Mass
      */
     void setMass(@Nonnull Mass mass);
+
+    /**
+     * Sets the volume of this object.
+     * @param volume Volume
+     */
+    void setVolume(@Nonnull Volume volume);
+
+    /**
+     * Sets whether this object is subject to gravity and air resistance.
+     *
+     * @param obeysPhysics {@code true} to obey physics
+     */
+    void setObeysPhysics(boolean obeysPhysics);
+
+    /**
+     * Sets the drag coefficient of this object.
+     * @param coefficient Drag coefficient
+     */
+    void setDragCoefficient(double coefficient);
 
 }

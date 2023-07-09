@@ -1,4 +1,4 @@
-package oasis.vortex.util.movement;
+package oasis.vortex.util.physics;
 
 import oasis.vortex.world.World;
 

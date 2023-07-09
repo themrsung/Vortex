@@ -12,7 +12,8 @@ import oasis.vortex.task.event.EventTask;
 import oasis.vortex.task.tick.TickTask;
 import oasis.vortex.tickable.movement.MovementTickable;
 import oasis.vortex.tickable.movement.VectorTickable;
-import oasis.vortex.util.movement.Mass;
+import oasis.vortex.util.physics.Mass;
+import oasis.vortex.util.physics.Volume;
 import oasis.vortex.world.DummyWorld;
 import oasis.vortex.world.World;
 
@@ -96,7 +97,13 @@ public final class Vortex {
         state.addWorld(testWorld);
 
         final Object testObject = new DummyObject(testWorld);
-        testObject.setLocation(testObject.getLocation().plusY(100));
+        testObject.setMass(new Mass(70, Mass.Unit.KILOGRAM));
+        testObject.setLocation(testObject.getLocation().plusY(555));
+        testObject.setDragCoefficient(1.0);
+        testObject.setVolume(new Volume(0.4, 1.7, 0.4));
+
+//        testObject.setVector(testObject.getVector().setX(1.42));
+
         testWorld.addObject(testObject);
 
     }

@@ -1,5 +1,6 @@
-package oasis.vortex.util.movement;
+package oasis.vortex.util.physics;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 /**
@@ -34,6 +35,15 @@ public record Vector(
      */
     public static Builder builder() {
         return new Builder();
+    }
+
+    /**
+     * Gets the velocity of this vector.
+     * @return Velocity
+     */
+    @Nonnegative
+    public double getVelocity() {
+        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
     }
 
     /**
@@ -133,6 +143,21 @@ public record Vector(
     @Nonnull
     public Vector modifyZ(double modifier) {
         return toBuilder().z(z * modifier).build();
+    }
+
+    /**
+     * Modifies all values of this vector.
+     *
+     * @param modifier Modifier
+     * @return Resulting vector
+     */
+    @Nonnull
+    public Vector modifyAll(double modifier) {
+        return toBuilder()
+                .x(x * modifier)
+                .y(y * modifier)
+                .z(z * modifier)
+                .build();
     }
 
     /**

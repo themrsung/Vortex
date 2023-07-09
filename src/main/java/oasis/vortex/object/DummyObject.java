@@ -1,8 +1,9 @@
 package oasis.vortex.object;
 
-import oasis.vortex.util.movement.Location;
-import oasis.vortex.util.movement.Mass;
-import oasis.vortex.util.movement.Vector;
+import oasis.vortex.util.physics.Location;
+import oasis.vortex.util.physics.Mass;
+import oasis.vortex.util.physics.Vector;
+import oasis.vortex.util.physics.Volume;
 import oasis.vortex.world.World;
 import org.joda.time.Duration;
 
@@ -19,6 +20,7 @@ public class DummyObject implements Object {
         this.location = Location.builder().world(world).build();
         this.vector = new Vector();
         this.mass = new Mass(100, Mass.Unit.KILOGRAM);
+        this.volume = new Volume();
         this.obeysPhysics = true;
         this.dragCoefficient = 1;
     }
@@ -27,6 +29,7 @@ public class DummyObject implements Object {
     private Location location;
     private Vector vector;
     private Mass mass;
+    private Volume volume;
     private boolean obeysPhysics;
     private double dragCoefficient;
 
@@ -53,10 +56,21 @@ public class DummyObject implements Object {
         return vector;
     }
 
+    @Override
+    public double getVelocity() {
+        return vector.getVelocity();
+    }
+
     @Nonnull
     @Override
     public Mass getMass() {
         return mass;
+    }
+
+    @Nonnull
+    @Override
+    public Volume getVolume() {
+        return volume;
     }
 
     @Override
@@ -82,6 +96,11 @@ public class DummyObject implements Object {
     @Override
     public void setMass(@Nonnull Mass mass) {
         this.mass = mass;
+    }
+
+    @Override
+    public void setVolume(@Nonnull Volume volume) {
+        this.volume = volume;
     }
 
     public void setObeysPhysics(boolean obeysPhysics) {
