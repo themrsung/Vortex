@@ -4,22 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="Saving progress">
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/Scheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/VortexState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/TickTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/Tickable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/location/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/location/Vector.java" afterDir="false" />
+    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="Reformatted code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/dummy/DummyEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/economy/PaymentEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/listener/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/listener/dummy/DummyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/actor/EconomicActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/AbstractScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/event/EventScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/tick/TickScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/event/EventTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/meta/Unique.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/actor/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/actor/Actor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/scheduler/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/VortexState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/VortexState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/TickTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/TickTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/Tickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/tick/Tickable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +62,31 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="oasis.vortex.scheduler.event" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Vortex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="oasis.vortex.Vortex" />
+      <module name="Vortex" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oasis.vortex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Vortex" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,12 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688888007321</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Reformatted code">
+      <option name="closed" value="true" />
+      <created>1688915380279</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688915380279</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Saving progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving progress" />
+    <MESSAGE value="Reformatted code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformatted code" />
   </component>
 </project>

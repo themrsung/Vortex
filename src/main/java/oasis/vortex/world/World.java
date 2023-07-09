@@ -3,6 +3,7 @@ package oasis.vortex.world;
 import oasis.vortex.object.Object;
 import oasis.vortex.task.tick.Tickable;
 import oasis.vortex.util.collection.set.BetterSet;
+import oasis.vortex.util.meta.Unique;
 
 import javax.annotation.Nonnull;
 
@@ -13,7 +14,7 @@ import javax.annotation.Nonnull;
  * There can be multiple worlds in one game state.
  * </p>
  */
-public interface World extends Tickable {
+public interface World extends Unique, Tickable {
     /**
      * Gets a set of objects in this world.
      *

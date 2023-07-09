@@ -1,7 +1,8 @@
 package oasis.vortex.task;
 
+import org.joda.time.Duration;
+
 import javax.annotation.Nonnull;
-import java.time.Duration;
 
 /**
  * <h2>Task</h2>

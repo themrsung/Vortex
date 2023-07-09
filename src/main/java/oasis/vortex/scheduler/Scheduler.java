@@ -14,20 +14,20 @@ import javax.annotation.Nonnull;
  * and handle the regular calling of given task.
  * </p>
  */
-public interface Scheduler {
+public interface Scheduler<T extends Task> {
     /**
      * Registers a task to be called regularly by this scheduler.
      *
      * @param task Task to register
      */
-    void registerTask(@Nonnull Task task);
+    void registerTask(@Nonnull T task);
 
     /**
      * Unregisters a task from this scheduler.
      *
      * @param task Task to unregister
      */
-    void unregisterTask(@Nonnull Task task);
+    void unregisterTask(@Nonnull T task);
 
     /**
      * Unregisters every task this scheduler is handling.
@@ -49,5 +49,15 @@ public interface Scheduler {
      * @return List of registered tasks
      */
     @Nonnull
-    BetterList<Task> getTasks();
+    BetterList<T> getTasks();
+
+    /**
+     * Starts this scheduler.
+     */
+    void start();
+
+    /**
+     * Stops this scheduler.
+     */
+    void stop();
 }

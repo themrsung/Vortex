@@ -4,9 +4,9 @@ import oasis.vortex.object.Object;
 import oasis.vortex.util.collection.list.BetterArrayList;
 import oasis.vortex.util.collection.list.BetterList;
 import oasis.vortex.world.World;
+import org.joda.time.Duration;
 
 import javax.annotation.Nonnull;
-import java.time.Duration;
 import java.util.UUID;
 
 /**

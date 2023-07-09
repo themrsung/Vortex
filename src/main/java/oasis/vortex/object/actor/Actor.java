@@ -7,4 +7,5 @@ import oasis.vortex.object.Object;
  * <p>An actor is a physical object which exists inside a world.</p>
  */
 public interface Actor extends Object {
+
 }

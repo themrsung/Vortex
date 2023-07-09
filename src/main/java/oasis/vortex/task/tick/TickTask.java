@@ -4,9 +4,9 @@ import oasis.vortex.Vortex;
 import oasis.vortex.task.Task;
 import oasis.vortex.util.collection.list.BetterArrayList;
 import oasis.vortex.util.collection.list.BetterList;
+import org.joda.time.Duration;
 
 import javax.annotation.Nonnull;
-import java.time.Duration;
 
 /**
  * <h2>TickTask</h2>

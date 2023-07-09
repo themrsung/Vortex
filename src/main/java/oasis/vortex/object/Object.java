@@ -3,10 +3,10 @@ package oasis.vortex.object;
 import oasis.vortex.task.tick.Tickable;
 import oasis.vortex.util.location.Location;
 import oasis.vortex.util.location.Vector;
+import oasis.vortex.util.meta.Unique;
 import oasis.vortex.world.World;
 
 import javax.annotation.Nonnull;
-import java.util.UUID;
 
 /**
  * <h2>Object</h2>
@@ -15,19 +15,7 @@ import java.util.UUID;
  * Objects can be placed in {@link World}s, and have a {@link Location}.
  * </p>
  */
-public interface Object extends Tickable {
-    //
-    // Identification
-    //
-
-    /**
-     * Gets the unique identifier of this object.
-     *
-     * @return {@link UUID}
-     */
-    @Nonnull
-    UUID getUniqueId();
-
+public interface Object extends Unique, Tickable {
     //
     // Location & Vector
     //
