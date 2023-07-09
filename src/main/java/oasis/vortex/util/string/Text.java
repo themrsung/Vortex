@@ -128,13 +128,13 @@ public class Text implements BetterString {
 
     @Nonnull
     @Override
-    public BetterString setColor(@Nullable Color color) {
+    public Text setColor(@Nullable Color color) {
         return toBuilder().color(color).build();
     }
 
     @Nonnull
     @Override
-    public BetterString setFormat(@Nonnull Format format) {
+    public Text setFormat(@Nonnull Format format) {
         return toBuilder().format(format).build();
     }
 
