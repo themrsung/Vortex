@@ -9,6 +9,7 @@ import java.util.UUID;
 public interface Object {
     /**
      * Gets the unique identifier of this object.
+     *
      * @return {@link UUID}
      */
     UUID getUniqueId();

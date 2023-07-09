@@ -4,21 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/actor/Actor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/state/State.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/time/Duration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" afterDir="false" />
+    <list default="true" id="b5de88a0-fd84-4487-96fc-f7aa6fc0a53b" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/PermissiveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/PreemptiveEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/event/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/BetterCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/list/BetterArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/list/BetterList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/set/BetterHashSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/collection/set/BetterSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Asset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/AssetStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/economy/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/Vortex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/object/Object.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/util/time/Duration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/oasis/vortex/world/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -60,6 +67,19 @@
       <option name="presentableId" value="Default" />
       <updated>1688882425233</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1688883006470</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688883006470</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>
