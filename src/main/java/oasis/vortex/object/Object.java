@@ -40,14 +40,6 @@ public interface Object extends Unique, Tickable {
     Vector getVector();
 
     /**
-     * Gets the velocity scalar of this object.
-     *
-     * @return Velocity
-     */
-    @Nonnegative
-    double getVelocity();
-
-    /**
      * Gets the mass of this object.
      *
      * @return {@link Mass}

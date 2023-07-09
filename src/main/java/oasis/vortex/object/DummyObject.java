@@ -56,11 +56,6 @@ public class DummyObject implements Object {
         return vector;
     }
 
-    @Override
-    public double getVelocity() {
-        return vector.getVelocity();
-    }
-
     @Nonnull
     @Override
     public Mass getMass() {
