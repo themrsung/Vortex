@@ -25,7 +25,7 @@ public record Location(
         double y,
         double z,
         double yaw, // -180 <= yaw <= 180
-        double pitch // -180 <= yaw <= 180
+        double pitch // -180 <= pitch <= 180
 ) {
     /**
      * Constructor which ignores yaw and pitch.
