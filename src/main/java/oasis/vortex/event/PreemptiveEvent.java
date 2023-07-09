@@ -22,22 +22,49 @@ public interface PreemptiveEvent extends Event {
     @Nullable
     Event getSuccessor();
 
+    /**
+     * Gets whether this event has been cancelled before handling.
+     *
+     * @return {@code true} if this event has been cancelled
+     */
+    boolean isCancelled();
+
+    /**
+     * Sets whether this event has been cancelled before handling.
+     *
+     * @param cancelled Whether this event has been cancelled
+     */
+    void setCancelled(boolean cancelled);
+
     abstract class AbstractPreemptiveEvent extends AbstractEvent implements PreemptiveEvent {
         public AbstractPreemptiveEvent() {
             this.successor = null;
+            this.cancelled = false;
         }
 
         public AbstractPreemptiveEvent(@Nullable Event successor) {
             this.successor = successor;
+            this.cancelled = false;
         }
 
         @Nullable
-        final Event successor;
+        private final Event successor;
+        private boolean cancelled;
 
         @Override
         @Nullable
         public Event getSuccessor() {
             return successor;
+        }
+
+        @Override
+        public boolean isCancelled() {
+            return cancelled;
+        }
+
+        @Override
+        public void setCancelled(boolean cancelled) {
+            this.cancelled = cancelled;
         }
     }
 }

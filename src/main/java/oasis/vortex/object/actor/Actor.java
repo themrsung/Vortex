@@ -20,6 +20,7 @@ public interface Actor extends Object {
 
     /**
      * Sets the name of this actor.
+     * Name cannot be null. To not give a name, pass {@code new Text()} or {@code BetterString.blank()} as the parameter.
      *
      * @param name Name
      */

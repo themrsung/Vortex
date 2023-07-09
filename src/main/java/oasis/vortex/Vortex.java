@@ -2,14 +2,22 @@ package oasis.vortex;
 
 import oasis.vortex.event.dummy.DummyEvent;
 import oasis.vortex.listener.dummy.DummyListener;
+import oasis.vortex.object.DummyObject;
+import oasis.vortex.object.Object;
 import oasis.vortex.scheduler.event.EventScheduler;
 import oasis.vortex.scheduler.tick.TickScheduler;
 import oasis.vortex.state.State;
 import oasis.vortex.state.VortexState;
 import oasis.vortex.task.event.EventTask;
 import oasis.vortex.task.tick.TickTask;
+import oasis.vortex.tickable.movement.MovementTickable;
+import oasis.vortex.tickable.movement.VectorTickable;
+import oasis.vortex.util.movement.Mass;
+import oasis.vortex.world.DummyWorld;
+import oasis.vortex.world.World;
 
 import javax.annotation.Nonnull;
+import java.text.NumberFormat;
 
 /**
  * <h2>Vortex</h2>
@@ -62,15 +70,35 @@ public final class Vortex {
     public static void main(String[] args) {
         System.out.println("Hello world!");
 
+        Mass test = new Mass(1, Mass.Unit.TON).addValue(100, Mass.Unit.KILOGRAM);
+        System.out.println(NumberFormat.getInstance().format(test.value()));
+
+        // Register tasks
         tickScheduler.registerTask(tickTask);
         tickScheduler.start();
 
         eventScheduler.registerTask(eventTask);
         eventScheduler.start();
 
+        // Register tickables
+        tickTask.registerTickable(new MovementTickable());
+        tickTask.registerTickable(new VectorTickable());
+
+        // Register listeners
         eventTask.registerListener(new DummyListener());
 
+
         eventTask.callEvent(new DummyEvent());
+
+        // Testing out gravity
+
+        final World testWorld = new DummyWorld();
+        state.addWorld(testWorld);
+
+        final Object testObject = new DummyObject(testWorld);
+        testObject.setLocation(testObject.getLocation().plusY(100));
+        testWorld.addObject(testObject);
+
     }
 
     //

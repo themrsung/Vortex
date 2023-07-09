@@ -1,4 +1,4 @@
-package oasis.vortex.util.location;
+package oasis.vortex.util.movement;
 
 import oasis.vortex.world.World;
 
@@ -10,6 +10,9 @@ import javax.annotation.Nonnull;
  * Represents a point in a three-dimensional plane.
  * Since yaw and pitch represent the rotation of an object,
  * their getters are designed to convert them to within the acceptable range.
+ * </p>
+ * <p>
+ *     <b>Every coordinate is denoted in meters.</b>
  * </p>
  *
  * @param world World this location is in
@@ -139,6 +142,56 @@ public record Location(
     }
 
     /**
+     * Changes the X coordinate of this location.
+     * @param x X coordinate
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location setX(double x) {
+        return toBuilder().x(x).build();
+    }
+
+    /**
+     * Changes the Y coordinate of this location.
+     * @param y Y coordinate
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location setY(double y) {
+        return toBuilder().y(y).build();
+    }
+
+    /**
+     * Changes the Z coordinate of this location.
+     * @param z Z coordinate
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location setZ(double z) {
+        return toBuilder().z(z).build();
+    }
+
+    /**
+     * Changes the yaw of this location.
+     * @param yaw Yaw
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location setYaw(double yaw) {
+        return toBuilder().yaw(yaw).build();
+    }
+
+    /**
+     * Changes the pitch of this location.
+     * @param pitch pitch
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location setPitch(double pitch) {
+        return toBuilder().pitch(pitch).build();
+    }
+
+    /**
      * Adds another location to this location.
      *
      * @param other Location to add
@@ -159,6 +212,21 @@ public record Location(
     }
 
     /**
+     * Adds a vector to this location.
+     *
+     * @param vector Vector to add
+     * @return Resulting location
+     */
+    @Nonnull
+    public Location plusVector(@Nonnull Vector vector) {
+        return toBuilder()
+                .x(x + vector.x())
+                .y(y + vector.y())
+                .z(z + vector.z())
+                .build();
+    }
+
+    /**
      * Get a builder pre-populated with the data of this location.
      *
      * @return Builder from location
@@ -173,7 +241,7 @@ public record Location(
      * <h2>Location.Builder</h2>
      * <p>Since locations are immutable records, a builder is used to edit its properties.</p>
      */
-    public static class Builder {
+    public static final class Builder {
         @SuppressWarnings("ConstantConditions")
         private Builder() {
             this.world = null;

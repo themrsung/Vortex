@@ -44,6 +44,16 @@ public interface BetterString {
     }
 
     /**
+     * Gets a BetterString with no data. Uses instance of {@link Text}.
+     * Use instead of null.
+     *
+     * @return Blank string
+     */
+    static BetterString blank() {
+        return new Text();
+    }
+
+    /**
      * Creates a new BetterString from multiple raw strings.
      * Uses an instance of {@link Text}.
      *

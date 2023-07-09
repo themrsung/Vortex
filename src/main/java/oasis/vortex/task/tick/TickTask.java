@@ -2,6 +2,7 @@ package oasis.vortex.task.tick;
 
 import oasis.vortex.Vortex;
 import oasis.vortex.task.Task;
+import oasis.vortex.tickable.Tickable;
 import oasis.vortex.util.collection.list.BetterArrayList;
 import oasis.vortex.util.collection.list.BetterList;
 import org.joda.time.Duration;

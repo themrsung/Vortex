@@ -1,4 +1,4 @@
-package oasis.vortex.task.tick;
+package oasis.vortex.tickable;
 
 import org.joda.time.Duration;
 

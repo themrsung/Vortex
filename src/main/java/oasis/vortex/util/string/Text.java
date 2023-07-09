@@ -87,6 +87,30 @@ public class Text implements BetterString {
     }
 
     /**
+     * Gets an unformatted instance of Text from multiple strings.
+     *
+     * @param rawStrings Strings
+     * @return {@link Text}
+     */
+    public static Text of(@Nonnull String... rawStrings) {
+        Text text = new Text();
+        for (String s : rawStrings) text = text.append(new Text(s));
+        return text;
+    }
+
+    /**
+     * Gets an unformatted instance of Text from multiple {@link BetterString}s.
+     *
+     * @param strings Strings
+     * @return {@link Text}
+     */
+    public static Text of(@Nonnull BetterString... strings) {
+        Text text = new Text();
+        for (BetterString bs : strings) text = text.append(bs);
+        return text;
+    }
+
+    /**
      * Converts this string to a builder for modification.
      *
      * @return Builder with this string's properties

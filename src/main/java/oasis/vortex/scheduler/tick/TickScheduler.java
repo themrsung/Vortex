@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
  */
 public final class TickScheduler extends AbstractScheduler<TickTask> {
     @Nonnull
-    private static final Duration interval = new Duration(50);
+    private static final Duration interval = new Duration(25);
 
     @Nonnull
     @Override

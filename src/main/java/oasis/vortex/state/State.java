@@ -1,7 +1,7 @@
 package oasis.vortex.state;
 
 import oasis.vortex.object.Object;
-import oasis.vortex.task.tick.Tickable;
+import oasis.vortex.tickable.Tickable;
 import oasis.vortex.util.collection.list.BetterList;
 import oasis.vortex.util.collection.set.BetterSet;
 import oasis.vortex.world.World;
