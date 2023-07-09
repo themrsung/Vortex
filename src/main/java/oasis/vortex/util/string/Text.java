@@ -15,10 +15,10 @@ import java.util.stream.Stream;
 /**
  * <h2>Text</h2>
  * <p>
- *     The default implementation of {@link BetterString}.
- *     This goes against the naming convention of better types due to its frequent usage.
- *     Typing in {@code BetterString string = new BetterText("text");} every time would be a nightmare.
- *     Therefore, the name was shortened to {@code Text}.
+ * The default implementation of {@link BetterString}.
+ * This goes against the naming convention of better types due to its frequent usage.
+ * Typing in {@code BetterString string = new BetterText("text");} every time would be a nightmare.
+ * Therefore, the name was shortened to {@code Text}.
  * </p>
  */
 public class Text implements BetterString {
@@ -33,6 +33,7 @@ public class Text implements BetterString {
 
     /**
      * Creates a new text from a raw {@link String}.
+     *
      * @param rawString Raw string
      */
     public Text(@Nonnull String rawString) {
@@ -43,8 +44,9 @@ public class Text implements BetterString {
 
     /**
      * Creates a new text with color.
+     *
      * @param rawString Raw string
-     * @param color Color
+     * @param color     Color
      */
     public Text(@Nonnull String rawString, @Nonnull Color color) {
         this.rawString = rawString;
@@ -53,7 +55,21 @@ public class Text implements BetterString {
     }
 
     /**
+     * Creates a new text with specified formatting.
+     *
+     * @param rawString Raw string
+     * @param color     Color
+     * @param format    Format
+     */
+    public Text(@Nonnull String rawString, @Nonnull Color color, @Nonnull Format format) {
+        this.rawString = rawString;
+        this.color = color;
+        this.format = format;
+    }
+
+    /**
      * Gets a blank builder instance.
+     *
      * @return Blank builder
      */
     public static Builder builder() {
@@ -62,6 +78,7 @@ public class Text implements BetterString {
 
     /**
      * Gets a builder instance with default string.
+     *
      * @param rawString Raw string
      * @return Builder with given raw string as value
      */
@@ -71,6 +88,7 @@ public class Text implements BetterString {
 
     /**
      * Converts this string to a builder for modification.
+     *
      * @return Builder with this string's properties
      */
     public Builder toBuilder() {
@@ -134,11 +152,13 @@ public class Text implements BetterString {
         private Builder() {
             this("");
         }
+
         private Builder(@Nonnull String rawString) {
             this.rawString = rawString;
             this.color = null;
             this.format = Format.NORMAL;
         }
+
         private Builder(@Nonnull Text text) {
             this.rawString = text.rawString;
             this.color = text.color;

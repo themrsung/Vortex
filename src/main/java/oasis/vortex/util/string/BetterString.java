@@ -15,17 +15,18 @@ import java.util.stream.Stream;
 /**
  * <h2>BetterString</h2>
  * <p>
- *     A {@link String} with additional features.
- *     Because String is final, {@link BetterString} has a nested String inside,
- *     and all utility methods delegate to the nested String.
+ * A {@link String} with additional features.
+ * Because String is final, {@link BetterString} has a nested String inside,
+ * and all utility methods delegate to the nested String.
  * </p>
  * <p>
- *     All Vortex types use {@link BetterString} instead of {@link String}.
+ * All Vortex types use {@link BetterString} instead of {@link String}.
  * </p>
  */
 public interface BetterString {
     /**
      * Gets a blank text builder.
+     *
      * @return Text builder
      */
     static Text.Builder text() {
@@ -34,6 +35,7 @@ public interface BetterString {
 
     /**
      * Gets a text builder with specified raw string.
+     *
      * @param rawString Raw string
      * @return Text builder
      */
@@ -59,7 +61,7 @@ public interface BetterString {
      * Uses instance of {@link Text}.
      *
      * @param delimiter Delimiter
-     * @param elements Elements to join
+     * @param elements  Elements to join
      * @return Joined string
      */
     static BetterString join(@Nonnull BetterString delimiter, @Nonnull BetterList<BetterString> elements) {
@@ -73,6 +75,7 @@ public interface BetterString {
 
     /**
      * Gets the raw string contained in this {@link BetterString}.
+     *
      * @return {@link String}
      */
     @Nonnull
@@ -80,6 +83,7 @@ public interface BetterString {
 
     /**
      * Gets the color of this string.
+     *
      * @return {@link Color}
      */
     @Nullable
@@ -126,7 +130,7 @@ public interface BetterString {
         BOLD,
         ITALIC,
         STRIKE,
-        UNDERLINED;
+        UNDERLINED
     }
 
     //
@@ -231,14 +235,14 @@ public interface BetterString {
      * Ignores the formatting of the inputted strings.
      *
      * <p>
-     *     Due to the advanced constructors provided by {@link BetterList}'s subtypes,
-     *     this can be used with incredible versatility. For example:
-     *     <br>
-     *     {@code BetterString starting = new BetterString("Vortex");} <br>
-     *     {@code BetterString result = starting.append(new BetterArrayList(new Text(" "), new Text("is the best engine!")));}
-     *     <br>
-     *     You can also use:
-     *     {@code BetterString result = starting.append(BetterString.of(" ", "is", " ", "the best engine!")}
+     * Due to the advanced constructors provided by {@link BetterList}'s subtypes,
+     * this can be used with incredible versatility. For example:
+     * <br>
+     * {@code BetterString starting = new BetterString("Vortex");} <br>
+     * {@code BetterString result = starting.append(new BetterArrayList(new Text(" "), new Text("is the best engine!")));}
+     * <br>
+     * You can also use:
+     * {@code BetterString result = starting.append(BetterString.of(" ", "is", " ", "the best engine!")}
      * </p>
      *
      * @param strings List of strings
@@ -274,6 +278,7 @@ public interface BetterString {
 
     /**
      * Checks if this string matches given regex.
+     *
      * @param regex Regex
      * @return {@code true} if this string matches given regex
      * @throws PatternSyntaxException When regex is invalid
@@ -294,7 +299,7 @@ public interface BetterString {
      * Delegates to {@link String#substring(int, int)}.
      *
      * @param beginIndex Beginning index
-     * @param endIndex End index
+     * @param endIndex   End index
      * @return Resulting string
      * @throws IndexOutOfBoundsException When index is out of bounds
      */
@@ -325,7 +330,7 @@ public interface BetterString {
      * Replaces target with replacement.
      * Delegates to {@link String#replace(CharSequence, CharSequence)}.
      *
-     * @param target Target to replace
+     * @param target      Target to replace
      * @param replacement String to replace to
      * @return Resulting string
      */
@@ -335,7 +340,7 @@ public interface BetterString {
     /**
      * Replaces the first occurrence of given regex to replacement string.
      *
-     * @param regex Regex to filter
+     * @param regex       Regex to filter
      * @param replacement String to replace to
      * @return Resulting string
      * @throws PatternSyntaxException When regex is invalid
@@ -346,7 +351,7 @@ public interface BetterString {
     /**
      * Replaces all occurrences of given regex to replacement string.
      *
-     * @param regex Regex to filter
+     * @param regex       Regex to filter
      * @param replacement String to replace to
      * @return Resulting string
      * @throws PatternSyntaxException When regex is invalid
@@ -384,6 +389,7 @@ public interface BetterString {
 
     /**
      * Converts this string to lower case.
+     *
      * @return Resulting string
      */
     @Nonnull
@@ -391,6 +397,7 @@ public interface BetterString {
 
     /**
      * Converts this string to upper case.
+     *
      * @return Resulting string
      */
     @Nonnull
@@ -398,6 +405,7 @@ public interface BetterString {
 
     /**
      * Trims this string. (Removes excess spaces)
+     *
      * @return Resulting string
      */
     @Nonnull
@@ -405,6 +413,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#strip()}.
+     *
      * @return Stripped string
      */
     @Nonnull
@@ -412,6 +421,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#stripLeading()}.
+     *
      * @return Stripped string
      */
     @Nonnull
@@ -419,6 +429,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#stripTrailing()}.
+     *
      * @return Stripped string
      */
     @Nonnull
@@ -426,6 +437,7 @@ public interface BetterString {
 
     /**
      * Returns a stream of lines. Delegates to {@link String#lines()}.
+     *
      * @return Stream of lines
      */
     @Nonnull
@@ -433,6 +445,7 @@ public interface BetterString {
 
     /**
      * Adjusts the indentation of this string. Delegates to {@link String#indent(int)}.
+     *
      * @param delta Delta to apply
      * @return Resulting string
      */
@@ -441,6 +454,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#stripIndent()}.
+     *
      * @return Stripped string
      */
     @Nonnull
@@ -448,6 +462,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#translateEscapes()}.
+     *
      * @return Resulting string
      * @throws IllegalArgumentException When an escape sequence is malformed
      */
@@ -458,14 +473,15 @@ public interface BetterString {
      * Applies a function to this string.
      *
      * @param function Function to apply
+     * @param <R>      Type of result
      * @return Resulting string
-     * @param <R> Type of result
      */
     @Nonnull
     <R> R transform(@Nonnull Function<? super BetterString, ? extends R> function);
 
     /**
      * Delegates to {@link String#chars()}.
+     *
      * @return {@link IntStream}
      */
     @Nonnull
@@ -473,6 +489,7 @@ public interface BetterString {
 
     /**
      * Delegates to {@link String#toCharArray()}.
+     *
      * @return Array of {@link Character}s
      */
     @Nonnull

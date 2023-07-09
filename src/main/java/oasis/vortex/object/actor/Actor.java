@@ -12,6 +12,7 @@ import javax.annotation.Nonnull;
 public interface Actor extends Object {
     /**
      * Gets the name of this actor.
+     *
      * @return Name
      */
     @Nonnull
@@ -19,6 +20,7 @@ public interface Actor extends Object {
 
     /**
      * Sets the name of this actor.
+     *
      * @param name Name
      */
     void setName(@Nonnull BetterString name);
