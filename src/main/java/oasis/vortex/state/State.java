@@ -3,6 +3,7 @@ package oasis.vortex.state;
 import oasis.vortex.object.Object;
 import oasis.vortex.task.tick.Tickable;
 import oasis.vortex.util.collection.list.BetterList;
+import oasis.vortex.util.collection.set.BetterSet;
 import oasis.vortex.world.World;
 
 import javax.annotation.Nonnull;
@@ -47,10 +48,10 @@ public interface State extends Tickable {
     /**
      * Gets a combined list of objects from all worlds.
      *
-     * @return List of {@link Object}s.
+     * @return Set of {@link Object}s.
      */
     @Nonnull
-    BetterList<Object> getObjects();
+    BetterSet<Object> getObjects();
 
     /**
      * Searches for an object within this state.

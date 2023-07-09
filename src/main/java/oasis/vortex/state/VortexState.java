@@ -3,6 +3,8 @@ package oasis.vortex.state;
 import oasis.vortex.object.Object;
 import oasis.vortex.util.collection.list.BetterArrayList;
 import oasis.vortex.util.collection.list.BetterList;
+import oasis.vortex.util.collection.set.BetterHashSet;
+import oasis.vortex.util.collection.set.BetterSet;
 import oasis.vortex.world.World;
 import org.joda.time.Duration;
 
@@ -33,8 +35,8 @@ public final class VortexState implements State {
 
     @Nonnull
     @Override
-    public BetterList<Object> getObjects() {
-        BetterList<Object> objects = new BetterArrayList<>();
+    public BetterSet<Object> getObjects() {
+        BetterSet<Object> objects = new BetterHashSet<>();
         worlds.forEach(w -> objects.addAll(w.getObjects()));
         return objects;
     }
