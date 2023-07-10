@@ -17,7 +17,6 @@ import oasis.vortex.tickable.movement.VectorTickable;
 import oasis.vortex.util.physics.Mass;
 import oasis.vortex.util.physics.Volume;
 import oasis.vortex.util.string.Text;
-import oasis.vortex.world.DummyWorld;
 import oasis.vortex.world.RealisticWorld;
 import oasis.vortex.world.World;
 
@@ -104,7 +103,7 @@ public final class Vortex {
 
         final Object human = new DummyObject(world);
         human.setMass(new Mass(70, Mass.Unit.KILOGRAM));
-        human.setLocation(human.getLocation().plusY(10)); // The height of Lotte Tower in Seoul, Korea
+        human.setLocation(human.getLocation().plusY(555)); // The height of Lotte Tower in Seoul, Korea
         human.setDragCoefficient(1.0);
         human.setVolume(new Volume(0.4, 1.7, 0.4));
 

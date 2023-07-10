@@ -31,6 +31,7 @@ public final class VectorTickable implements Tickable {
                 BetterSet<ImmovableObject> immovableObjects = w.getObjects().filter(ImmovableObject.class);
                 for (ImmovableObject im : immovableObjects) {
                     final TriLocation tl = im.getTriLocation().toBuilder().volume(im.getVolume().setY(im.getVolume().y() + 0.5)).build();
+                    // This is a bodged solution for debugging. Please re-implement this. (note to future self)
                     if (tl.overlaps(o.getTriLocation())) {
                         o.setVector(o.getVector().plusY(accelerationFromGravity)); // Cancel gravity if object is on top of an immovable object.
                     }
