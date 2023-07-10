@@ -2,6 +2,7 @@ package oasis.vortex.util.physics;
 
 import oasis.vortex.world.World;
 
+import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 
 /**
@@ -229,6 +230,33 @@ public record Location(
                 .y(y + vector.y())
                 .z(z + vector.z())
                 .build();
+    }
+
+    // Util
+
+    /**
+     * Gets the distance between this location and the given location.
+     * Distance is calculated in three-dimensional context.
+     * For two-dimensional distance, use {@link Location#getDistanceToIgnoreY(Location)}.
+     *
+     * @param other Other location
+     * @return Distance in meters
+     */
+    @Nonnegative
+    public double getDistanceTo(@Nonnull Location other) {
+        return Math.sqrt(Math.abs(x - other.x) + Math.abs(y - other.y) + Math.abs(z - other.z));
+    }
+
+    /**
+     * Gets the distance between this location and the given location.
+     * Distance is calculated in two-dimensional context. (delta of Y is ignored)
+     *
+     * @param other Other location
+     * @return Distance in meters
+     */
+    @Nonnegative
+    public double getDistanceToIgnoreY(@Nonnull Location other) {
+        return Math.sqrt(Math.abs(x - other.x) + Math.abs(y - other.y));
     }
 
     /**

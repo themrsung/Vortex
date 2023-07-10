@@ -21,9 +21,19 @@ public record Volume(
         @Nonnegative double y,
         @Nonnegative double z
 ) {
+    /**
+     * Default volume. All fields are set to zero.
+     */
     public Volume() {
         this(0, 0, 0);
     }
+
+    /**
+     * Gets a new builder instance.
+     * @return Builder
+     */
+    @Nonnull
+    public static Builder builder() { return new Builder(); }
 
     /**
      * Gets the volume in cubic meters.

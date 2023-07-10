@@ -2,7 +2,9 @@ package oasis.vortex;
 
 import oasis.vortex.event.dummy.DummyEvent;
 import oasis.vortex.listener.dummy.DummyListener;
+import oasis.vortex.listener.physics.CollisionListener;
 import oasis.vortex.object.DummyObject;
+import oasis.vortex.object.ImmovableObject;
 import oasis.vortex.object.Object;
 import oasis.vortex.scheduler.event.EventScheduler;
 import oasis.vortex.scheduler.tick.TickScheduler;
@@ -14,11 +16,14 @@ import oasis.vortex.tickable.movement.MovementTickable;
 import oasis.vortex.tickable.movement.VectorTickable;
 import oasis.vortex.util.physics.Mass;
 import oasis.vortex.util.physics.Volume;
+import oasis.vortex.util.string.Text;
 import oasis.vortex.world.DummyWorld;
+import oasis.vortex.world.RealisticWorld;
 import oasis.vortex.world.World;
 
 import javax.annotation.Nonnull;
 import java.text.NumberFormat;
+import java.util.UUID;
 
 /**
  * <h2>Vortex</h2>
@@ -87,24 +92,28 @@ public final class Vortex {
 
         // Register listeners
         eventTask.registerListener(new DummyListener());
+        eventTask.registerListener(new CollisionListener());
 
 
         eventTask.callEvent(new DummyEvent());
 
         // Testing out gravity
 
-        final World testWorld = new DummyWorld();
-        state.addWorld(testWorld);
+        final World world = new RealisticWorld(UUID.randomUUID(), new Text("Realistic World"));
+        state.addWorld(world);
 
-        final Object testObject = new DummyObject(testWorld);
-        testObject.setMass(new Mass(70, Mass.Unit.KILOGRAM));
-        testObject.setLocation(testObject.getLocation().plusY(555));
-        testObject.setDragCoefficient(1.0);
-        testObject.setVolume(new Volume(0.4, 1.7, 0.4));
+        final Object human = new DummyObject(world);
+        human.setMass(new Mass(70, Mass.Unit.KILOGRAM));
+        human.setLocation(human.getLocation().plusY(10)); // The height of Lotte Tower in Seoul, Korea
+        human.setDragCoefficient(1.0);
+        human.setVolume(new Volume(0.4, 1.7, 0.4));
 
 //        testObject.setVector(testObject.getVector().setX(1.42));
 
-        testWorld.addObject(testObject);
+        world.addObject(human);
+
+        final Object ground = ImmovableObject.ground(world, 0);
+        world.addObject(ground);
 
     }
 

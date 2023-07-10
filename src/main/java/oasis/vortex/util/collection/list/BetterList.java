@@ -18,6 +18,7 @@ public interface BetterList<E> extends BetterCollection<E>, List<E> {
      * @return Filtered list
      */
     @Nonnull
+    @Override
     BetterList<E> filter(@Nonnull Predicate<E> filter);
 
     /**
@@ -28,6 +29,7 @@ public interface BetterList<E> extends BetterCollection<E>, List<E> {
      * @return Filtered list
      */
     @Nonnull
+    @Override
     <F extends E> BetterList<F> filter(@Nonnull Class<F> type);
 
     /**
@@ -39,6 +41,7 @@ public interface BetterList<E> extends BetterCollection<E>, List<E> {
      * @return Filtered list
      */
     @Nonnull
+    @Override
     <F extends E> BetterList<F> filter(@Nonnull Class<F> type, @Nonnull Predicate<F> filter);
 
     /**
@@ -50,5 +53,6 @@ public interface BetterList<E> extends BetterCollection<E>, List<E> {
      * @return Filtered list
      */
     @Nonnull
+    @Override
     <F extends E> BetterList<F> filter(@Nonnull Predicate<E> filter, @Nonnull Class<F> type);
 }

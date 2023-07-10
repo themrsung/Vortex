@@ -2,13 +2,11 @@ package oasis.vortex.object;
 
 import oasis.vortex.tickable.Tickable;
 import oasis.vortex.util.meta.Unique;
-import oasis.vortex.util.physics.Location;
-import oasis.vortex.util.physics.Mass;
-import oasis.vortex.util.physics.Vector;
-import oasis.vortex.util.physics.Volume;
+import oasis.vortex.util.physics.*;
 import oasis.vortex.world.World;
 
 import javax.annotation.Nonnull;
+import javax.validation.constraints.Positive;
 
 /**
  * <h2>Object</h2>
@@ -55,6 +53,56 @@ public interface Object extends Unique, Tickable {
     Volume getVolume();
 
     /**
+     * Gets the TriLocation of this object.
+     * This represents the amount of three-dimensional space this object exists in.
+     *
+     * @return {@link TriLocation}
+     */
+    @Nonnull
+    default TriLocation getTriLocation() { return new TriLocation(getLocation(), getVolume()); }
+
+    /**
+     * Checks if this object contains another object in spacial context.
+     *
+     * @param other Other object
+     * @return {@code true} if the other object's TriLocation is within the bounds of this object's TriLocation
+     * @see TriLocation#contains(TriLocation) 
+     */
+    default boolean contains(@Nonnull Object other) { return getTriLocation().contains(other.getTriLocation()); }
+
+    /**
+     * Checks if this object overlaps another object in spacial context.
+     * 
+     * @param other Other object
+     * @return {@code true} if the other object's TriLocation is within the bounds of this object's TriLocation
+     * @see TriLocation#overlaps(TriLocation) 
+     */
+    default boolean overlaps(@Nonnull Object other) { return getTriLocation().overlaps(other.getTriLocation()); }
+
+    /**
+     * Gets the density of this object, denoted in kilograms per cubic meter.
+     * This cannot return 0, as it will break physics calculations.
+     * If this object has no mass or no volume, it will return {@link Double#MIN_VALUE}.
+     *
+     * @return Density (kg/m3)
+     */
+    @Positive
+    default double getDensity() {
+        try {
+            return Math.max(getMass().valueKilograms() / getVolume().getVolume(), Double.MIN_VALUE);
+        } catch (ArithmeticException e) {
+            return Double.MIN_VALUE;
+        }
+    }
+
+    /**
+     * Gets whether this object allows other objects to overlap with its bounds.
+     *
+     * @return {@code true} if this is a fluid.
+     */
+    boolean isFluid();
+
+    /**
      * Whether this object is subject to gravity and air resistance.
      *
      * @return {@code true} if this actor obeys physics.
@@ -67,6 +115,7 @@ public interface Object extends Unique, Tickable {
      *
      * @return Drag coefficient
      */
+    @Positive
     double getDragCoefficient();
 
     /**
@@ -98,6 +147,13 @@ public interface Object extends Unique, Tickable {
     void setVolume(@Nonnull Volume volume);
 
     /**
+     * Sets whether this object is a fluid.
+     *
+     * @param fluid {@code true} for fluids
+     */
+    void setFluid(boolean fluid);
+
+    /**
      * Sets whether this object is subject to gravity and air resistance.
      *
      * @param obeysPhysics {@code true} to obey physics
@@ -109,6 +165,6 @@ public interface Object extends Unique, Tickable {
      *
      * @param coefficient Drag coefficient
      */
-    void setDragCoefficient(double coefficient);
+    void setDragCoefficient(@Positive double coefficient);
 
 }

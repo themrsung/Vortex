@@ -21,6 +21,7 @@ public class DummyObject implements Object {
         this.vector = new Vector();
         this.mass = new Mass(100, Mass.Unit.KILOGRAM);
         this.volume = new Volume();
+        this.fluid = false;
         this.obeysPhysics = true;
         this.dragCoefficient = 1;
     }
@@ -30,6 +31,7 @@ public class DummyObject implements Object {
     private Vector vector;
     private Mass mass;
     private Volume volume;
+    private boolean fluid;
     private boolean obeysPhysics;
     private double dragCoefficient;
 
@@ -69,6 +71,11 @@ public class DummyObject implements Object {
     }
 
     @Override
+    public boolean isFluid() {
+        return fluid;
+    }
+
+    @Override
     public boolean obeysPhysics() {
         return obeysPhysics;
     }
@@ -96,6 +103,11 @@ public class DummyObject implements Object {
     @Override
     public void setVolume(@Nonnull Volume volume) {
         this.volume = volume;
+    }
+
+    @Override
+    public void setFluid(boolean fluid) {
+        this.fluid = fluid;
     }
 
     public void setObeysPhysics(boolean obeysPhysics) {

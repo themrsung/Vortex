@@ -3,9 +3,12 @@ package oasis.vortex.world;
 import oasis.vortex.object.Object;
 import oasis.vortex.util.collection.set.BetterHashSet;
 import oasis.vortex.util.collection.set.BetterSet;
+import oasis.vortex.util.string.BetterString;
+import oasis.vortex.util.string.Text;
 import org.joda.time.Duration;
 
 import javax.annotation.Nonnull;
+import javax.validation.constraints.Positive;
 import java.util.UUID;
 
 /**
@@ -15,15 +18,21 @@ import java.util.UUID;
 public class DummyWorld implements World {
     public DummyWorld() {
         this.uniqueId = UUID.randomUUID();
+        this.name = new Text("World 1!!!");
         this.objects = new BetterHashSet<>();
         this.gravity = DEFAULT_GRAVITY;
+        this.airDensity = DEFAULT_AIR_DENSITY;
     }
 
     @Nonnull
     private final UUID uniqueId;
     @Nonnull
+    private BetterString name;
+    @Nonnull
     private final BetterSet<Object> objects;
     private double gravity;
+    @Positive
+    private double airDensity;
 
     @Override
     public void tick(@Nonnull Duration delta) {
@@ -41,6 +50,17 @@ public class DummyWorld implements World {
     @Nonnull
     public UUID getUniqueId() {
         return uniqueId;
+    }
+
+    @Override
+    @Nonnull
+    public BetterString getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(@Nonnull BetterString name) {
+        this.name = name;
     }
 
     @Override
@@ -67,5 +87,16 @@ public class DummyWorld implements World {
     @Override
     public void setGravity(double gravity) {
         this.gravity = gravity;
+    }
+
+    @Override
+    @Positive
+    public double getAirDensity() {
+        return airDensity;
+    }
+
+    @Override
+    public void setAirDensity(@Positive double airDensity) {
+        this.airDensity = airDensity;
     }
 }
